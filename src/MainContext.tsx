@@ -1001,11 +1001,13 @@ export const MainProvider = ({ children }) => {
       };
 
       const autoRefreshFeed = async () => {
-        let saved = await localForage.getItem("autoRefreshFeed");
+        //TODO: Add this back when we know it's safe
+        let saved = false //await localForage.getItem("autoRefreshFeed");
         saved === false ? setAutoRefreshFeed(false) : setAutoRefreshFeed(true);
       };
       const autoRefreshComments = async () => {
-        let saved = await localForage.getItem("autoRefreshComments");
+        //TODO: Add this back when we know it's safe
+        let saved = false //await localForage.getItem("autoRefreshComments");
         saved === false
           ? setAutoRefreshComments(false)
           : setAutoRefreshComments(true);
@@ -1015,7 +1017,8 @@ export const MainProvider = ({ children }) => {
         saved === false ? setAskToUpdateFeed(false) : setAskToUpdateFeed(true);
       };
       const refreshOnFocus = async () => {
-        let saved = await localForage.getItem("refreshOnFocus");
+        //TODO: Add this back when we know it's safe
+        let saved = false //await localForage.getItem("refreshOnFocus");
         saved === false ? setRefreshOnFocus(false) : setRefreshOnFocus(true);
       };
       const loadVolume = async () => {

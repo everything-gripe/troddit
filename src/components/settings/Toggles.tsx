@@ -83,6 +83,10 @@ const Toggles = ({
   const [title, setTitle] = useState("");
   const [switchSubtext, setSwitchSubtext] = useState(subtext);
   const disabled =
+    //TODO: Remove when safe
+    (setting == "autoRefreshFeed" ||
+      setting == "autoRefreshComments" ||
+      setting == "refreshOnFocus") ||
     (setting == "postWideUI" && context.syncWideUI == true) ||
     (setting == "collapseChildrenOnly" &&
       context.defaultCollapseChildren === true) ||
