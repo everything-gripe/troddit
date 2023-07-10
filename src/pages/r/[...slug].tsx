@@ -173,8 +173,8 @@ SubredditPage.getInitialProps = async (d) => {
   //       secret: process.env.NEXTAUTH_SECRET,
   //     });
   //     tokenData = {
-  //       accessToken: token.reddit.accessToken,
-  //       refreshToken: token.reddit.refreshToken,
+  //       accessToken: token.everything.accessToken,
+  //       refreshToken: token.everything.refreshToken,
   //       expires: token.expires,
   //     };
   //   }

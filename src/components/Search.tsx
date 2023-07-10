@@ -412,7 +412,7 @@ const Search = ({ id, setShowSearch = (a) => {} }) => {
 
   const handleSignIn = (e) => {
     e.stopPropagation();
-    signIn("reddit");
+    signIn("everything");
   };
 
   const addSub = (e, sub) => {

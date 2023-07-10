@@ -8,7 +8,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 const BASE_ROUTE = "https://oauth.everything.gripe/api";
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
-  const uri = request.url?.split("/api/reddit")?.[1]; //request.nextUrl?.pathname?.split("/api/reddit")?.[1];
+  const uri = request.url?.split("/api/everything")?.[1]; //request.nextUrl?.pathname?.split("/api/everything")?.[1];
   //const search = request.nextUrl.searchParams.toString();
   const method = request.method;
   const auth = request.headers?.["authorization"]; //request.headers?.get("authorization");

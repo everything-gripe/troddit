@@ -38,8 +38,8 @@ function b2a(a) {
 async function refreshAccessToken(token) {
   let refresh = true;
   let refreshtoken = "";
-  if (token?.reddit?.refreshToken) {
-    refreshtoken = token?.reddit?.refreshToken;
+  if (token?.everything?.refreshToken) {
+    refreshtoken = token?.everything?.refreshToken;
   } else if (token?.refreshToken) {
     refreshtoken = token.refreshToken;
   } else if (token?.refresh_token) {
@@ -73,10 +73,10 @@ async function refreshAccessToken(token) {
 
       return {
         ...token,
-        reddit: {
-          accessToken: refreshedTokens.access_token ?? token.reddit.accessToken, //fallback to old access token
+        everything: {
+          accessToken: refreshedTokens.access_token ?? token.everything.accessToken, //fallback to old access token
           refreshToken:
-            refreshedTokens.refresh_token ?? token.reddit.refreshToken, //fall back to old refresh token
+            refreshedTokens.refresh_token ?? token.everything.refreshToken, //fall back to old refresh token
         },
         //iat: Math.floor(Date.now() / 1000),
         expires: Math.floor(Date.now() / 1000) + refreshedTokens.expires_in,
@@ -91,22 +91,22 @@ async function refreshAccessToken(token) {
   return token;
 }
 
-const redditScope =
+const everythingScope =
   "identity mysubreddits read edit vote submit report save subscribe history"; //Check Reddit API Documentation for more. The identity scope is required.
 
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   providers: [
     {
-      id: "reddit",
-      name: "Reddit",
+      id: "everything",
+      name: "Everything",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       type: "oauth",
       version: "2.0",
       token: " https://www.everything.gripe/api/v1/access_token",
       accessTokenUrl: " https://www.everything.gripe/api/v1/access_token",
-      authorization: `https://www.everything.gripe/api/v1/authorize?response_type=code&duration=permanent&scope=${redditScope}`,
+      authorization: `https://www.everything.gripe/api/v1/authorize?response_type=code&duration=permanent&scope=${everythingScope}`,
       userinfo: "https://oauth.everything.gripe/api/v1/me",
       profile: (profile) => {
         return {

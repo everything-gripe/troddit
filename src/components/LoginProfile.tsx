@@ -15,7 +15,7 @@ export default function LoginProfile() {
         aria-label="login"
         className="w-full h-full"
         onClick={() =>
-          premium?.isPremium ? signIn("reddit") : context.setPremiumModal(true)
+          premium?.isPremium ? signIn("everything") : context.setPremiumModal(true)
         }
       >
         Login

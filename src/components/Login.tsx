@@ -22,7 +22,7 @@ export default function Login() {
               onClick={() => {
                 invalidateAll();
                 premium?.isPremium
-                  ? signIn("reddit")
+                  ? signIn("everything")
                   : context.setPremiumModal(true);
               }}
             >

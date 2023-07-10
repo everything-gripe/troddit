@@ -90,7 +90,7 @@ const Login = () => {
                   className="inline-flex justify-center w-full px-4 py-2 text-base font-medium border border-transparent rounded-md shadow-sm bg-th-accent hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-th-accent sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => {
                     context.setLoginModal(false);
-                    signIn("reddit");
+                    signIn("everything");
                   }}
                 >
                   Login

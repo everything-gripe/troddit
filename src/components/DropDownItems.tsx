@@ -539,7 +539,7 @@ const DropDownItems = ({ show, hideExtra = false }) => {
               }
               onClick={() => {
                 premium?.isPremium
-                  ? signIn("reddit")
+                  ? signIn("everything")
                   : context.setPremiumModal(true);
               }}
             >

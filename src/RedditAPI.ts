@@ -32,7 +32,7 @@ const getToken = async () => {
   const session = await getSession();
   if (session) {
     try {
-      let tokendata = await (await axios.get("/api/reddit/mytoken")).data;
+      let tokendata = await (await axios.get("/api/everything/mytoken")).data;
       return {
         accessToken: tokendata.data.accessToken,
         refreshToken: tokendata.data.refreshToken,
@@ -1092,7 +1092,7 @@ export const addToMulti = async ({
     try {
       logApiRequest("cud", true);
       const res = await fetch(
-        `/api/reddit/multi/user/${user}/m/${multi}/r/${srname}?model=${encodeURIComponent(
+        `/api/everything/multi/user/${user}/m/${multi}/r/${srname}?model=${encodeURIComponent(
           `{"name":"${srname}"}`
         )}`,
         {
@@ -1125,7 +1125,7 @@ export const deleteFromMulti = async ({
     try {
       logApiRequest("cud", true);
       const res = await fetch(
-        `/api/reddit/multi/user/${user}/m/${multi}/r/${srname}?model=${encodeURIComponent(
+        `/api/everything/multi/user/${user}/m/${multi}/r/${srname}?model=${encodeURIComponent(
           `{"name":"${srname}"}`
         )}`,
         {
@@ -1183,7 +1183,7 @@ export const createMulti = async ({
       const uri = `/multi/user/${user}/m/${display_name}/?model=${encodeURIComponent(
         json
       )}`;
-      const res = await fetch(`/api/reddit${uri}`, {
+      const res = await fetch(`/api/everything${uri}`, {
         method: "PUT",
         headers: {
           Authorization: `bearer ${token}`,

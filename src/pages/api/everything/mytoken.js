@@ -10,8 +10,8 @@ export default async (req, res) => {
     return res.status(200).json({
       status: "Ok",
       data: {
-        accessToken: token.reddit.accessToken,
-        refreshToken: token.reddit.refreshToken,
+        accessToken: token.everything.accessToken,
+        refreshToken: token.everything.refreshToken,
         expires: token.expires,
       },
     });
