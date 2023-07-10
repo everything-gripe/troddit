@@ -848,29 +848,29 @@ const Thread = ({
                             </span>
                           </div>
                         </a>
-                        <a
-                          href={`https://www.everything.gripe${
-                            post?.permalink ?? ""
-                          }`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <div className="flex flex-row items-center p-2 space-x-1 border rounded-md border-th-border hover:border-th-borderHighlight ">
-                            <ImReddit
-                              className={
-                                "flex-none w-5 h-5 " +
-                                (!usePortrait && " md:mr-2")
-                              }
-                            />
-                            <span
-                              className={
-                                "hidden " + (!usePortrait && " md:block ")
-                              }
-                            >
-                              Original
-                            </span>
-                          </div>
-                        </a>
+                        {/*<a*/}
+                        {/*  href={`https://www.everything.gripe${*/}
+                        {/*    post?.permalink ?? ""*/}
+                        {/*  }`}*/}
+                        {/*  target="_blank"*/}
+                        {/*  rel="noreferrer"*/}
+                        {/*>*/}
+                        {/*  <div className="flex flex-row items-center p-2 space-x-1 border rounded-md border-th-border hover:border-th-borderHighlight ">*/}
+                        {/*    <ImReddit*/}
+                        {/*      className={*/}
+                        {/*        "flex-none w-5 h-5 " +*/}
+                        {/*        (!usePortrait && " md:mr-2")*/}
+                        {/*      }*/}
+                        {/*    />*/}
+                        {/*    <span*/}
+                        {/*      className={*/}
+                        {/*        "hidden " + (!usePortrait && " md:block ")*/}
+                        {/*      }*/}
+                        {/*    >*/}
+                        {/*      Original*/}
+                        {/*    </span>*/}
+                        {/*  </div>*/}
+                        {/*</a>*/}
                         <div className="relative z-50 mx-1">
                           <PostOptButton post={post} mode="post" />
                         </div>
