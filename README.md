@@ -1,7 +1,7 @@
 # Troddit 
-### _An alternative front end web client for Reddit_
+### _An alternative front end web client for Everything_
 
-Live at [troddit.com](https://www.troddit.com)
+Live at [client.everything.gripe](https://client.everything.gripe)
 
 
 ## Screenshots
@@ -18,7 +18,7 @@ Shown browsing a multi-reddit. Subreddits pane and options menu open.
 ### Open posts with comments to the side and use arrows for navigation
 <img width="1725" alt="post_open" src="https://user-images.githubusercontent.com/32972409/155919310-0d57fdaa-03a0-47c0-be03-1c29da6e87ac.png">
 
-### Search for subreddits, users, and posts.  
+### Search for groups, users, and posts.  
 Shown in single column mode with wide UI disabled. Sort options menu is open.
 <img width="1724" alt="search_narrow" src="https://user-images.githubusercontent.com/32972409/155919321-7dd78a3b-5eac-4753-92f9-295d44447e17.png">  
 
@@ -59,29 +59,25 @@ To contribute create a branch and submit a PR!
 ### Environment Variables
 To use login functionality the following environment variables need to be defined in a .env.local file placed in the root directory: 
 
-CLIENT_ID=\<ID of your Reddit app>\
-CLIENT_SECRET=\<Secret from your Reddit app>\
-REDDIT_REDIRECT=http://localhost:3000/api/auth/callback/reddit  
+CLIENT_ID=\<ID of your Everything app>\
+CLIENT_SECRET=\<Secret from your Everything app>\
+REDDIT_REDIRECT=http://localhost:3000/api/auth/callback/everything  
 NEXTAUTH_SECRET=\<See [https://next-auth.js.org/configuration/options#secret](https://next-auth.js.org/configuration/options#secret)>\
 NEXTAUTH_URL=http://localhost:3000
-
-To create a Reddit app visit [https://old.reddit.com/prefs/apps/](https://old.reddit.com/prefs/apps/). 
-The redirect uri should match the REDDIT_REDIRECT variable. 
-
 
 ## Docker
 
 ### To Deploy the [Docker Image](https://hub.docker.com/r/bsyed/troddit)
 
 ```sh
-docker pull bsyed/troddit
-docker run -d --name troddit -p 3000:3000 bsyed/troddit
+docker pull everything-gripe/troddit
+docker run -d --name troddit -p 3000:3000 everything-gripe/troddit
 ```
 
 Alternatively for arm64: 
 
 ```sh
-docker pull bsyed/troddit:arm64
+docker pull everything-gripe/troddit:arm64
 ```
 
 ### To Build the Image Yourself 
@@ -91,7 +87,7 @@ Dockerfile if necessary. When ready, simply use the Dockerfile to
 build the image.
 
 ```sh
-git clone https://github.com/burhan-syed/troddit
+git clone https://github.com/everything-gripe/troddit
 cd troddit
 docker build . -t troddit
 ```

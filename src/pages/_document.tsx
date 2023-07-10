@@ -14,7 +14,7 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="Browse Reddit better with Troddit. Grid views, single column mode, galleries, and a number of post styles. Login with Reddit to see your own subs, vote, and comment. Open source. "
+            content="Browse Everything better with Troddit. Grid views, single column mode, galleries, and a number of post styles. Login with Everything to see your own groups, vote, and comment. Open source. "
           ></meta>
 
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,7 +30,7 @@ class MyDocument extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content="troddit" />
-          <meta name="description" content="A web app for Reddit" />
+          <meta name="description" content="A web app for Everything" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           {/* <meta
@@ -47,7 +47,7 @@ class MyDocument extends Document {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://troddit.com" />
           <meta name="twitter:title" content="troddit" />
-          <meta name="twitter:description" content="A web app for Reddit" />
+          <meta name="twitter:description" content="A web app for Everything" />
           <meta
             name="twitter:image"
             content="https://troddit.com/icon-192.png"
@@ -55,7 +55,7 @@ class MyDocument extends Document {
           {/* <meta name="twitter:creator" content="@DavidWShadow" /> */}
           <meta property="og:type" content="website" />
           {/* <meta property="og:title" content="troddit" />
-          <meta property="og:description" content="A web app for Reddit" /> */}
+          <meta property="og:description" content="A web app for Everything" /> */}
           <meta property="og:site_name" content="troddit" />
           <meta property="og:url" content="https://troddit.com" />
           <meta
