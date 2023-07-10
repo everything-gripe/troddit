@@ -152,7 +152,7 @@ const Thread = ({
 
   useEffect(() => {
     const getMediaInfo = async (post) => {
-      const domain = window?.location?.hostname ?? "www.troddit.com";
+      const domain = window?.location?.hostname ?? "client.everything.gripe";
       const mInfo = await findMediaInfo(post, false, domain);
       setMediaInfo(mInfo);
     };
@@ -766,7 +766,7 @@ const Thread = ({
                             aria-label="share"
                             onClick={async (e) => {
                               e.preventDefault();
-                              const shareLink = `https://www.troddit.com/${
+                              const shareLink = `https://www.everything.gripe/${
                                 post?.permalink?.split("/")?.[4]
                               }`;
                               const shareData = {

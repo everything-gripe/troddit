@@ -77,7 +77,7 @@ const Login = () => {
                     <div className="mt-3">
                       <p className="text-sm text-th-text opacity-80">
                         A login is required to vote and access additional
-                        features. You can login with your Reddit account below.
+                        features. You can login with your account below.
                       </p>
                     </div>
                   </div>

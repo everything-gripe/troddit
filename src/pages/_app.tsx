@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <Script defer data-domain={"troddit.com"} src="/js/script.js"></Script>
+      <Script defer data-domain={"client.everything.gripe"} src="/js/script.js"></Script>
 
       <Head>
         <meta

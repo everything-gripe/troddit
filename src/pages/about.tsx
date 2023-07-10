@@ -16,22 +16,17 @@ const AboutPage = ({ changelog }) => {
       <div className="h-full text-justify text-th-text ">
         <div className="flex flex-col justify-center max-w-xl min-h-full gap-4 mx-auto space-y-1 overflow-y-scroll scrollbar-none ">
           <p className="">
-            Troddit is a web app for Reddit. Follow subreddits and users locally
-            or login with your Reddit account to vote, comment, and manage your
+            Troddit is a web app for Everything. Follow groups and users locally
+            or login with your account to vote, comment, and manage your
             existing subscriptions.
           </p>
 
           <p className="">
-            This is an independent site not affiliated with Reddit. All content
-            on this site is retrieved from the public Reddit API.
-          </p>
-
-          <p className="">
             For any feature requests, bug reports, or general conversation head
-            over to <Link href={"/r/TrodditForReddit"} className={link}>r/TrodditForReddit</Link>.
+            over to <Link href={"/r/everything_gripe"} className={link}>r/everything_gripe</Link>.
             You can also create an issue on{" "}
             <a
-              href="https://www.github.com/burhan-syed/troddit"
+              href="https://www.github.com/everything-gripe/troddit-for-everything"
               target="_blank"
               rel="noreferrer"
               className={link}
@@ -41,9 +36,9 @@ const AboutPage = ({ changelog }) => {
             or contact me at{" "}
             <a
               className={link}
-              href="mailto: trodditdev@gmail.com"
+              href="mailto: dev@everything.gripe"
             >
-              trodditdev@gmail.com
+              dev@everything.gripe
             </a> for anything else.
           </p>
           <p className="">
@@ -71,7 +66,7 @@ const AboutPage = ({ changelog }) => {
               />
             </a>
             <a
-              href="https://www.github.com/burhan-syed/troddit"
+              href="https://www.github.com/everything-gripe/troddit-for-everything"
               target="_blank"
               rel="noreferrer"
               className="hover:cursor-pointer"

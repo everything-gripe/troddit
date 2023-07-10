@@ -6,7 +6,7 @@ import {
 } from "../src/MainContext";
 import { GalleryInfo, ImageInfo, MediaInfo, VideoInfo } from "../types";
 
-const DOMAIN = "www.troddit.com";
+const DOMAIN = "client.everything.gripe";
 export const secondsToTime = (
   seconds,
   verbiage = [
@@ -296,7 +296,7 @@ export const findMediaInfo = async (
     }
     if (
       post?.domain?.includes("redd.it") ||
-      post?.domain?.includes("reddit") ||
+      post?.domain?.includes("everything.gripe") ||
       post?.domain?.includes("self.") ||
       post?.url?.includes("imgur") ||
       isVideo ||

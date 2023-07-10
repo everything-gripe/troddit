@@ -45,7 +45,7 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://troddit.com" />
+          <meta name="twitter:url" content="https://client.everything.gripe" />
           <meta name="twitter:title" content="troddit" />
           <meta name="twitter:description" content="A web app for Everything" />
           <meta
@@ -57,13 +57,13 @@ class MyDocument extends Document {
           {/* <meta property="og:title" content="troddit" />
           <meta property="og:description" content="A web app for Everything" /> */}
           <meta property="og:site_name" content="troddit" />
-          <meta property="og:url" content="https://troddit.com" />
+          <meta property="og:url" content="https://client.everything.gripe" />
           <meta
             property="og:image"
             content="https://troddit.com/icon-512.png"
           />
         </Head>
-        <PlausibleProvider domain="troddit.com">
+        <PlausibleProvider domain="client.everything.gripe">
           <body className=" bg-th-base text-th-text">
             <Main />
             <NextScript />

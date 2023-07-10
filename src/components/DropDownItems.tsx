@@ -543,7 +543,7 @@ const DropDownItems = ({ show, hideExtra = false }) => {
                   : context.setPremiumModal(true);
               }}
             >
-              <span className="text-th-accent ">Login</span> with Reddit
+              <span className="text-th-accent ">Login</span>
             </button>
           )}
         </>
@@ -830,7 +830,7 @@ const DropDownItems = ({ show, hideExtra = false }) => {
       {session && error && (
         <>
           <div className="flex flex-row items-center justify-center p-4">
-            {"Can't connect to Reddit. Try refreshing."}
+            {"Can't connect to Everything. Try refreshing."}
           </div>
         </>
       )}

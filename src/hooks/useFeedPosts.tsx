@@ -113,7 +113,7 @@ const useFeedPosts = ({
       ?.flat() as any[];
     if (posts?.length > 0) {
       let isBlocked = false;
-      if (!checked && !blocked && domain === "www.troddit.com") {
+      if (!checked && !blocked && domain === "client.everything.gripe") {
         isBlocked = check(posts);
       }
       if (!isBlocked && !blocked) {

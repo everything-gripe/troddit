@@ -1,5 +1,5 @@
-# Troddit 
-### _An alternative front end web client for Everything_
+# Troddit for Everything 
+### _A front end web client for Everything_
 
 Live at [client.everything.gripe](https://client.everything.gripe)
 
@@ -87,7 +87,7 @@ Dockerfile if necessary. When ready, simply use the Dockerfile to
 build the image.
 
 ```sh
-git clone https://github.com/everything-gripe/troddit
+git clone https://github.com/everything-gripe/troddit-for-everything
 cd troddit
 docker build . -t troddit
 ```

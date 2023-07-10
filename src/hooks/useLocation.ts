@@ -35,8 +35,8 @@ const useLocation = (params?) => {
   });
 
   useEffect(() => {
-   const domain = window?.location?.hostname ?? 'www.troddit.com'
-   setDomain(domain); 
+   const domain = window?.location?.hostname ?? 'client.everything.gripe'
+   setDomain(domain);
   }, [])
   
 

@@ -53,7 +53,7 @@ const ErrMessage = () => {
             }
           </p>
           <p>
-            {"ETP blocks connections to Reddit. Consider turning this off:"}
+            {"ETP blocks connections to Everything. Consider turning this off:"}
           </p>
           <a className="text-th-link hover:text-th-linkHover" target={"_blank"} rel={"noreferrer"} href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop#w_what-to-do-if-a-site-seems-broken">
             {
@@ -61,8 +61,8 @@ const ErrMessage = () => {
             }
           </a>
         </>
-      ) : 
-       <p>{"Troddit can't connect to Reddit. This may be because Reddit is down or because your browser or a browser extension is blocking this connection. "}</p>
+      ) :
+       <p>{"Troddit can't connect to Everything. This may be because Everything is down or because your browser or a browser extension is blocking this connection. "}</p>
       }
       <p className="text-xs text-th-textLight"></p>
     </div>

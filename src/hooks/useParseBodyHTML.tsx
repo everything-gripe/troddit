@@ -58,7 +58,7 @@ const useParseBodyHTML = ({ rawHTML, newTabLinks = false }) => {
 
   useEffect(() => {
     const PROTOCOL = window.location.protocol;
-    const DOMAIN = window?.location?.host ?? "troddit.com";
+    const DOMAIN = window?.location?.host ?? "client.everything.gripe";
 
     const blankTargets = (str) => {
       if (str?.includes("<a ")) {

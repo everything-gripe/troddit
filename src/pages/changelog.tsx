@@ -47,7 +47,7 @@ const ChangeLogPage = ({ changelog }) => {
               />
             </a>
             <a
-              href="https://www.github.com/burhan-syed/troddit"
+              href="https://www.github.com/everything-gripe/troddit-for-everything"
               target="_blank"
               rel="noreferrer"
               className="hover:cursor-pointer"
