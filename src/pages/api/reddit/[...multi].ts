@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 //   runtime: "experimental-edge",
 // };
 
-const BASE_ROUTE = "https://oauth.reddit.com/api";
+const BASE_ROUTE = "https://oauth.everything.gripe/api";
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const uri = request.url?.split("/api/reddit")?.[1]; //request.nextUrl?.pathname?.split("/api/reddit")?.[1];

@@ -425,17 +425,17 @@ const Row1 = ({
                     <h1 className="hidden md:block">Source</h1>
                   </div>
                 </a>
-                <a
-                  href={`https://www.reddit.com${post?.permalink ?? ""}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hidden sm:block"
-                >
-                  <div className="flex flex-row h-[26px] items-center px-2 py-1 space-x-1 border border-transparent rounded-md hover:border-th-borderHighlight opacity-60 ">
-                    <ImReddit className="flex-none w-4 h-4 mb-0.5" />
-                    <h1 className="hidden md:block ">Original</h1>
-                  </div>
-                </a>
+                {/*<a*/}
+                {/*  href={`https://www.everything.gripe${post?.permalink ?? ""}`}*/}
+                {/*  target="_blank"*/}
+                {/*  rel="noreferrer"*/}
+                {/*  className="hidden sm:block"*/}
+                {/*>*/}
+                {/*  <div className="flex flex-row h-[26px] items-center px-2 py-1 space-x-1 border border-transparent rounded-md hover:border-th-borderHighlight opacity-60 ">*/}
+                {/*    <ImReddit className="flex-none w-4 h-4 mb-0.5" />*/}
+                {/*    <h1 className="hidden md:block ">Original</h1>*/}
+                {/*  </div>*/}
+                {/*</a>*/}
                 <div className="relative flex justify-end flex-grow sm:flex-grow-0 text-th-textLight ">
                   <PostOptButton post={post} mode={"row"} />
                 </div>

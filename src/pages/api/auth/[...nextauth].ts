@@ -52,7 +52,7 @@ async function refreshAccessToken(token) {
     //console.log(authvalue, refreshtoken);
     try {
       const url =
-        "https://www.reddit.com/api/v1/access_token?" +
+        "https://www.everything.gripe/api/v1/access_token?" +
         new URLSearchParams({
           grant_type: "refresh_token",
           refresh_token: refreshtoken,
@@ -104,10 +104,10 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.CLIENT_SECRET,
       type: "oauth",
       version: "2.0",
-      token: " https://www.reddit.com/api/v1/access_token",
-      accessTokenUrl: " https://www.reddit.com/api/v1/access_token",
-      authorization: `https://www.reddit.com/api/v1/authorize?response_type=code&duration=permanent&scope=${redditScope}`,
-      userinfo: "https://oauth.reddit.com/api/v1/me",
+      token: " https://www.everything.gripe/api/v1/access_token",
+      accessTokenUrl: " https://www.everything.gripe/api/v1/access_token",
+      authorization: `https://www.everything.gripe/api/v1/authorize?response_type=code&duration=permanent&scope=${redditScope}`,
+      userinfo: "https://oauth.everything.gripe/api/v1/me",
       profile: (profile) => {
         return {
           id: profile.id,

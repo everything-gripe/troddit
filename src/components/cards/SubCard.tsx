@@ -217,7 +217,7 @@ const SubCard = ({
                   </Link>
                   {!link && (data?.data?.url || data?.data?.subreddit?.url) && (
                     <a
-                      href={`https://www.reddit.com${
+                      href={`https://www.everything.gripe${
                         data?.data?.url ?? data?.data?.subreddit?.url
                       }`}
                       target={"_blank"}

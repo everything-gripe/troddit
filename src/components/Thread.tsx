@@ -569,7 +569,7 @@ const Thread = ({
                         className={" text-xl font-semibold mr-2"}
                         href={
                           `${post?.url}` ??
-                          `https://www.reddit.com${post?.permalink ?? ""}`
+                          `https://www.everything.gripe${post?.permalink ?? ""}`
                         }
                         target="_blank"
                         rel="noreferrer"
@@ -827,7 +827,7 @@ const Thread = ({
                         <a
                           href={
                             `${post?.url}` ??
-                            `https://www.reddit.com${post?.permalink ?? ""}`
+                            `https://www.everything.gripe${post?.permalink ?? ""}`
                           }
                           target="_blank"
                           rel="noreferrer"
@@ -849,7 +849,7 @@ const Thread = ({
                           </div>
                         </a>
                         <a
-                          href={`https://www.reddit.com${
+                          href={`https://www.everything.gripe${
                             post?.permalink ?? ""
                           }`}
                           target="_blank"

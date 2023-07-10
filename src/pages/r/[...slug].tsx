@@ -227,7 +227,7 @@ SubredditPage.getInitialProps = async (d) => {
   //   if (url?.includes("/comments/")) {
   //     try {
   //       const { post } = await loadPost(url);
-  //       //const data = await fetch(`https://www.reddit.com${url}.json`)
+  //       //const data = await fetch(`https://www.everything.gripe${url}.json`)
   //       //let post = (await data.json())?.[0]?.data?.children?.[0]?.data;
   //       const media = await findMediaInfo(
   //         post,

@@ -5,14 +5,14 @@ import type { Route_Types } from "../types/logs";
 // let limitUrl     = "limit=" + limit;
 // let afterUrl     = (after == null) ? "" : "&after="+after;
 // let countUrl     = (count == 0) ? "" : "&count="+count;
-// let url = "https://www.reddit.com" + subUrl + "/" + sortType + "/.json?" + sortUrl + "&" + limitUrl + afterUrl + countUrl;
+// let url = "https://www.everything.gripe" + subUrl + "/" + sortType + "/.json?" + sortUrl + "&" + limitUrl + afterUrl + countUrl;
 
 let ratelimit_remaining = 600;
 const LOG_REQUESTS = JSON.parse(
   process?.env?.NEXT_PUBLIC_ENABLE_API_LOG ?? "false"
 );
 const FREE_ACCESS = JSON.parse(process?.env?.NEXT_PUBLIC_FREE_ACCESS ?? "true");
-const REDDIT = "https://www.reddit.com";
+const REDDIT = "https://www.everything.gripe";
 
 export const logApiRequest = async (type: Route_Types, isOauth?: boolean) => {
   if (LOG_REQUESTS) {
@@ -203,7 +203,7 @@ export const loadFront = async ({
   if (loggedIn && accessToken && ratelimit_remaining > 1) {
     try {
       logApiRequest("home", true);
-      const res1 = await axios.get(`https://oauth.reddit.com/${sort}`, {
+      const res1 = await axios.get(`https://oauth.everything.gripe/${sort}`, {
         headers: {
           authorization: `bearer ${accessToken}`,
         },
@@ -302,7 +302,7 @@ export const loadSubreddits = async ({
       //console.log("WITH LOGIN", token);
       logApiRequest("r/", true);
       const res1 = await axios.get(
-        `https://oauth.reddit.com/r/${subreddits}/${sort}`,
+        `https://oauth.everything.gripe/r/${subreddits}/${sort}`,
         {
           headers: {
             authorization: `bearer ${accessToken}`,
@@ -383,7 +383,7 @@ export const getRedditSearch = async ({
     sr_detail: true,
   } as { q?: string; [x: string]: string | number | boolean };
 
-  let oathsearch = `https://oauth.reddit.com/search`;
+  let oathsearch = `https://oauth.everything.gripe/search`;
   let noauthsearch = `${REDDIT}/search.json`;
   if (p?.q?.substring(0, 5)?.toUpperCase() === "FLAIR") {
     p.q = p.q.replaceAll(" ", "%2B").replaceAll("+", "%2B");
@@ -394,12 +394,12 @@ export const getRedditSearch = async ({
     p["include_over_18"] = "0";
   }
   if (subreddit !== "all") {
-    oathsearch = `https://oauth.reddit.com/r/${subreddit}/search/.json?q=${
+    oathsearch = `https://oauth.everything.gripe/r/${subreddit}/search/.json?q=${
       p.q
     }&sort=${sort}&restrict_sr=on&include_over_18=${
       include_over_18 ? "on" : "0"
     }&t=${range}&after=${after}`;
-    noauthsearch = `https://www.reddit.com/r/${subreddit}/search/.json?q=${
+    noauthsearch = `https://www.everything.gripe/r/${subreddit}/search/.json?q=${
       p.q
     }&sort=${sort}&restrict_sr=on&include_over_18=${
       include_over_18 ? "on" : "0"
@@ -516,7 +516,7 @@ export const loadSubFlairPosts = async ({
   try {
     logApiRequest("search", false);
     const res = await axios.get(
-      `https://www.reddit.com/r/${subreddit}/search/.json?q=${f}&sort=${sort}&restrict_sr=on&include_over_18=on&t=${range}&after=${after}`,
+      `https://www.everything.gripe/r/${subreddit}/search/.json?q=${f}&sort=${sort}&restrict_sr=on&include_over_18=on&t=${range}&after=${after}`,
       {
         params: {
           raw_json: 1,
@@ -584,7 +584,7 @@ export const loadSubFlairs = async ({
     try {
       logApiRequest("r/", true);
       const res = await axios.get(
-        `https://www.reddit.com/r/${subreddit}/api/link_flair_v2.json`,
+        `https://www.everything.gripe/r/${subreddit}/api/link_flair_v2.json`,
         {
           params: {
             raw_json: 1,
@@ -609,7 +609,7 @@ export const loadSubInfo = async ({
     try {
       logApiRequest("r/", true);
       const res = await (
-        await axios.get(`https://oauth.reddit.com/r/${subreddit}/about`, {
+        await axios.get(`https://oauth.everything.gripe/r/${subreddit}/about`, {
           headers: {
             authorization: `bearer ${token}`,
           },
@@ -671,7 +671,7 @@ export const getWikiContent = async ({
   try {
     logApiRequest("r/", false);
     const content = await (
-      await axios.get(`https://www.reddit.com/r/${wikiquery.join("/")}.json`, {
+      await axios.get(`https://www.everything.gripe/r/${wikiquery.join("/")}.json`, {
         params: { raw_json: 1 },
       })
     ).data;
@@ -695,7 +695,7 @@ export const favoriteSub = async ({
   if (token && ratelimit_remaining > 1) {
     try {
       logApiRequest("cud", true);
-      const res = await fetch("https://oauth.reddit.com/api/favorite", {
+      const res = await fetch("https://oauth.everything.gripe/api/favorite", {
         method: "POST",
         headers: {
           Authorization: `bearer ${token}`,
@@ -730,7 +730,7 @@ export const subToSub = async ({
       let action_source = "o";
       if (action == "unsub") skip_initial_defaults = 0;
       logApiRequest("cud", true);
-      const res = await fetch("https://oauth.reddit.com/api/subscribe", {
+      const res = await fetch("https://oauth.everything.gripe/api/subscribe", {
         method: "POST",
         headers: {
           Authorization: `bearer ${token}`,
@@ -772,7 +772,7 @@ export const loadUserPosts = async ({
       logApiRequest("u/", true);
       res = await (
         await axios.get(
-          `https://oauth.reddit.com/user/${username}/${
+          `https://oauth.everything.gripe/user/${username}/${
             type ? type.toLowerCase() : ""
           }?sort=${sort}`,
           {
@@ -852,7 +852,7 @@ export const loadUserSelf = async ({
     try {
       logApiRequest("u/", true);
       const res = await axios.get(
-        `https://oauth.reddit.com/user/${username}/${where}`,
+        `https://oauth.everything.gripe/user/${username}/${where}`,
         {
           headers: {
             Authorization: `bearer ${accessToken}`,
@@ -894,7 +894,7 @@ export const getSubreddits = async ({
 }: PremiumAccessPropType & {
   after?: string;
   type?:string;
-  
+
 }) => {
   checkAccess(isPremium);
   try {
@@ -925,7 +925,7 @@ export const getMySubs = async ({
     try {
       logApiRequest("cud", true);
       let res = await axios.get(
-        "https://oauth.reddit.com/subreddits/mine/subscriber",
+        "https://oauth.everything.gripe/subreddits/mine/subscriber",
         {
           headers: {
             authorization: `bearer ${token}`,
@@ -962,7 +962,7 @@ export const getAllMyFollows = async ({ isPremium }: PremiumAccessPropType) => {
       try {
         logApiRequest("cud", true);
         let res = await axios.get(
-          "https://oauth.reddit.com/subreddits/mine/subscriber",
+          "https://oauth.everything.gripe/subreddits/mine/subscriber",
           {
             headers: {
               authorization: `bearer ${token}`,
@@ -1030,7 +1030,7 @@ export const getUserMultiSubs = async ({
     try {
       logApiRequest("cud", true);
       const res = await axios.get(
-        `https://oauth.reddit.com/api/multi/user/${user}/m/${multi}`,
+        `https://oauth.everything.gripe/api/multi/user/${user}/m/${multi}`,
         {
           headers: {
             Authorization: `bearer ${token}`,
@@ -1058,7 +1058,7 @@ export const getMyMultis = async ({ isPremium }: PremiumAccessPropType) => {
   if (token && ratelimit_remaining > 1) {
     try {
       logApiRequest("cud", true);
-      let res = await axios.get("https://oauth.reddit.com/api/multi/mine", {
+      let res = await axios.get("https://oauth.everything.gripe/api/multi/mine", {
         headers: {
           authorization: `bearer ${token}`,
         },
@@ -1206,7 +1206,7 @@ export const deleteMulti = async ({
     try {
       logApiRequest("cud", true);
       const res = await fetch(
-        `https://oauth.reddit.com/api/multi/user/${username}/m/${multiname}/`,
+        `https://oauth.everything.gripe/api/multi/user/${username}/m/${multiname}/`,
         {
           method: "DELETE",
           headers: {
@@ -1248,7 +1248,7 @@ export const searchSubreddits = async ({
     try {
       logApiRequest("search", true);
       let res = await axios.get(
-        "https://oauth.reddit.com/api/subreddit_autocomplete_v2",
+        "https://oauth.everything.gripe/api/subreddit_autocomplete_v2",
         {
           headers: {
             authorization: `bearer ${accessToken}`,
@@ -1339,7 +1339,7 @@ export const loadMoreComments = async ({
   if (accessToken && ratelimit_remaining > 1) {
     try {
       logApiRequest("thread", true);
-      const res = await fetch(`https://oauth.reddit.com/api/morechildren`, {
+      const res = await fetch(`https://oauth.everything.gripe/api/morechildren`, {
         method: "POST",
         headers: {
           Authorization: `bearer ${accessToken}`,
@@ -1406,7 +1406,7 @@ export const loadPost = async ({
 
     try {
       logApiRequest("thread", true);
-      let res = await axios.get(`https://oauth.reddit.com${path}`, {
+      let res = await axios.get(`https://oauth.everything.gripe${path}`, {
         headers: {
           authorization: `bearer ${accessToken}`,
         },
@@ -1468,7 +1468,7 @@ export const getMyID = async ({ isPremium }: PremiumAccessPropType) => {
   const token = await (await getToken())?.accessToken;
   try {
     logApiRequest("cud", true);
-    const res = await axios.get("https://oauth.reddit.com/api/v1/me", {
+    const res = await axios.get("https://oauth.everything.gripe/api/v1/me", {
       headers: {
         authorization: `bearer ${token}`,
       },
@@ -1494,7 +1494,7 @@ export const saveLink = async ({
     try {
       logApiRequest("cud", true);
       const res = await fetch(
-        `https://oauth.reddit.com/api/${isSaved ? "unsave" : "save"}`,
+        `https://oauth.everything.gripe/api/${isSaved ? "unsave" : "save"}`,
         {
           method: "POST",
           headers: {
@@ -1531,7 +1531,7 @@ export const hideLink = async ({
     try {
       logApiRequest("cud", true);
       const res = await fetch(
-        `https://oauth.reddit.com/api/${isHidden ? "unhide" : "hide"}`,
+        `https://oauth.everything.gripe/api/${isHidden ? "unhide" : "hide"}`,
         {
           method: "POST",
           headers: {
@@ -1563,7 +1563,7 @@ export const postVote = async ({
   const token = await (await getToken())?.accessToken;
   if (token && ratelimit_remaining > 1) {
     logApiRequest("cud", true);
-    const res = await fetch("https://oauth.reddit.com/api/vote", {
+    const res = await fetch("https://oauth.everything.gripe/api/vote", {
       method: "POST",
       headers: {
         Authorization: `bearer ${token}`,
@@ -1594,7 +1594,7 @@ export const postComment = async ({
   if (token && ratelimit_remaining > 1) {
     try {
       logApiRequest("cud", true);
-      const res = await fetch("https://oauth.reddit.com/api/comment", {
+      const res = await fetch("https://oauth.everything.gripe/api/comment", {
         method: "POST",
         headers: {
           Authorization: `bearer ${token}`,
@@ -1633,7 +1633,7 @@ export const editUserText = async ({
   if (token && ratelimit_remaining > 1) {
     try {
       logApiRequest("cud", true);
-      const res = await fetch("https://oauth.reddit.com/api/editusertext", {
+      const res = await fetch("https://oauth.everything.gripe/api/editusertext", {
         method: "POST",
         headers: {
           Authorization: `bearer ${token}`,
@@ -1668,7 +1668,7 @@ export const deleteLink = async ({
   if (token && ratelimit_remaining > 1) {
     try {
       logApiRequest("cud", true);
-      const res = await fetch("https://oauth.reddit.com/api/del", {
+      const res = await fetch("https://oauth.everything.gripe/api/del", {
         method: "POST",
         headers: {
           Authorization: `bearer ${token}`,
@@ -1708,7 +1708,7 @@ export const findDuplicates = async ({
       logApiRequest("thread", false);
       let res = await (
         await axios.get(
-          `https://oauth.reddit.com${permalink?.replace(
+          `https://oauth.everything.gripe${permalink?.replace(
             "/comments/",
             "/duplicates/"
           )}`,
@@ -1735,7 +1735,7 @@ export const findDuplicates = async ({
       logApiRequest("thread", false);
       let res = await (
         await axios.get(
-          `https://www.reddit.com${permalink?.replace(
+          `https://www.everything.gripe${permalink?.replace(
             "/comments/",
             "/duplicates/"
           )}.json`,
